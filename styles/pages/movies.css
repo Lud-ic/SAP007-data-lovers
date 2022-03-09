@@ -1,0 +1,93 @@
+@import "../reset.css";
+@import "../components/header.css";
+@import "../components/input-container.css";
+@import "../components/footer.css";
+
+.mainContainer {
+  min-height: 75vh;
+  background-color: #efefef;
+  width: 100%;
+  padding: 30px;
+}
+
+.movieCards {
+  display: flex;
+  flex-direction: column;
+  margin: 4vh 0vh;
+}
+
+.cardsMoviesContainer {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: auto;
+  gap: 4vw;
+  width: 70vw;
+  margin-bottom: 4vh;
+  background-color: #ffffff;
+  padding: 5vmin;
+}
+
+.poster {
+  width: 200px;
+  height: 285px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+
+.mainInfoAndRating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ratingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 10vw;
+  gap: 1vw;
+}
+
+.star {
+  width: 4vmin;
+  align-self: flex-start;
+}
+
+@media (max-width: 767px) {
+  .cardsMoviesContainer {
+    flex-direction: column;
+  }
+
+  .poster {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mainInfoAndRating {
+    display: flex;
+    /* flex-direction: column; */
+  }
+
+  .ratingContainer {
+    /* justify-content: flex-start; */
+  }
+}
+
+@media (max-width: 480px) {
+  .inputContainer {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  #inputSearch {
+    width: 100%;
+  }
+}

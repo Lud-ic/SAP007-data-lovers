@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Studio Ghibli</title>
+    <link rel="stylesheet" href="./styles/pages/movies.css" />
+    <link rel="icon" href="assets/icon/icons8-totoro(1).svg" alt="logo" />
+  </head>
+  <body>
+    <div id="root">
+      <header class="headerContainer">
+        <a href="index.html">
+          <picture class="logoContainer">
+            <img src="assets/icon/studio-ghibli-logo.svg" alt="logo" />
+            <h1 id="pageName">Studio Ghibli</h1>
+          </picture>
+        </a>
+        <nav>
+          <ul class="navList" id="navList">
+            <li class="listItem">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="listItem">
+              <a href="movies.html">Movies</a>
+            </li>
+            <li class="listItem">
+              <a href="characters.html">Characters</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu" id="toggleButton">
+          <div class="menuLine"></div>
+          <div class="menuLine"></div>
+          <div class="menuLine"></div>
+        </div>
+      </header>
+
+      <form class="inputContainer" id="form">
+        <input
+          type="search"
+          id="inputSearch"
+          class="inputs"
+          placeholder="Search by film, director, or producer"
+        />
+        <select
+          name="inputSelect"
+          id="inputSelect"
+          class="inputs"
+          title="inputSelect"
+        >
+          <option selected disabled value="">Sort by:</option>
+          <option value="A-Z">A-Z</option>
+          <option value="Z-A">Z-A</option>
+          <option value="Highest-Score">Highest score</option>
+          <option value="Lowest-Score">Lowest score</option>
+          <option value="Newest">Newest</option>
+          <option value="Oldest">Oldest</option>
+        </select>
+      </form>
+      <main class="mainContainer" id="mainContainer">
+        <section id="movieCards" class="movieCards"></section>
+      </main>
+      <footer class="footerContainer">Created by Ludmila Magalhães</footer>
+    </div>
+    <script src="./js/pages/movies.js" type="module"></script>
+  </body>
+</html>
