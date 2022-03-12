@@ -141,10 +141,12 @@ describe("filterCharacters", () => {
     expect(filterPeople).toEqual(arrayFilms[0].people);
     expect(filterPeople.length).toEqual(3);
   });
-  it("should return the characters of the film searched", () => {
-    const filterPeople = filterCharacters("Totoro", arrayFilms);
-    expect(filterPeople).toEqual(arrayFilms[1].people);
-    expect(filterPeople.length).toEqual(2);
+  it("should return the characters shearched", () => {
+    const filterPeople = filterCharacters("Jiji", arrayFilms);
+    expect(filterPeople).toEqual([arrayFilms[2].people[1]].flat());
+    expect(filterPeople.length).toEqual(1);
+  });
+});
   });
 });
 
