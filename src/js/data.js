@@ -51,11 +51,15 @@ export const filterCharacters = (searchString, films) => {
     if (film.title.toLowerCase().includes(searchString)) {
       resultCharacters.push(...film.people);
     } else {
-      for (const person of film.people) {
-        if (person.name.toLowerCase().includes(searchString)) {
-          resultCharacters.push(person);
-        }
-      }
+      const filterCharacters = film.people.filter((person) => {
+        return person.name.toLowerCase().includes(searchString);
+      });
+      resultCharacters.push(...filterCharacters);
+      // for (const person of film.people) {
+      //   if (person.name.toLowerCase().includes(searchString)) {
+      //     resultCharacters.push(person);
+      //   }
+      // }
     }
 
     // const filteredfilms = films.filter((film) => {
