@@ -78,3 +78,7 @@ export const filterByGender = (data, item) => {
   const filteredByGender = copy.filter((film) => film.gender === item);
   return filteredByGender;
 };
+
+export const countItem = (selectedFilter) => {
+  return selectedFilter.length;
+};

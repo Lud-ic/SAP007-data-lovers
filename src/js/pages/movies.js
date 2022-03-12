@@ -1,5 +1,5 @@
 import data from "../../data/ghibli/ghibli.js";
-import { filterMovies, sortMovies } from "../data.js";
+import { filterMovies, sortMovies, countItem } from "../data.js";
 import { menu } from "../components/header.js";
 
 menu();
@@ -45,6 +45,17 @@ function makeMovieCards(movies) {
     .join("");
 }
 
+const result = document.getElementById("result");
+
+function resultCalc(selectedFilter) {
+  result.innerHTML = "";
+  result.classList.add("resultContainer");
+  const totalResults = countItem(selectedFilter);
+  result.innerHTML = `${totalResults} result${
+    totalResults === 1 ? "" : "s"
+  } found`;
+}
+
 const inputSearch = document.getElementById("inputSearch");
 
 inputSearch.addEventListener("keyup", (e) => {
@@ -52,6 +63,7 @@ inputSearch.addEventListener("keyup", (e) => {
   console.log(searchString);
   const filteredMovies = filterMovies(searchString, moviesList);
   makeMovieCards(filteredMovies);
+  resultCalc(filteredMovies);
 });
 
 const inputSelect = document.getElementById("inputSelect");

@@ -5,6 +5,7 @@ import {
   getCharacters,
   alphabeticalSort,
   filterByGender,
+  countItem,
 } from "../data.js";
 
 menu();
@@ -39,12 +40,24 @@ function makeCharacterCards(people) {
     .join("");
 }
 
+const result = document.getElementById("result");
+
+function resultCalc(selectedFilter) {
+  result.innerHTML = "";
+  result.classList.add("resultContainer");
+  const totalResults = countItem(selectedFilter);
+  result.innerHTML = `${totalResults} result${
+    totalResults === 1 ? "" : "s"
+  } found`;
+}
+
 const inputSearch = document.getElementById("inputSearch");
 
 inputSearch.addEventListener("keyup", (e) => {
   const searchTitle = e.target.value;
   const dataFiltered = filterCharacters(searchTitle, data.films);
   makeCharacterCards(dataFiltered);
+  resultCalc(dataFiltered);
 });
 
 const inputSelect = document.getElementById("alphabeticalSelect");
@@ -62,6 +75,7 @@ selectGender.addEventListener("change", (e) => {
   const filteredGender = filterByGender(charactersAll, selectedGender);
   console.log(filteredGender, "Gender");
   makeCharacterCards(filteredGender);
+  resultCalc(filteredGender);
 });
 
 console.log(charactersAll);
