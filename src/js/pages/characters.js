@@ -17,16 +17,16 @@ const charactersAll = getCharacters(data.films);
 console.log(charactersAll, "charactersAll");
 
 function makeCharacterCards(people) {
-  document.getElementById("cardsCharacters").innerHTML = people
+  document.getElementById("characterCards").innerHTML = people
     .map(
       (character) =>
         `
-          <div class="cardsCharactersContainer">
-            <section class="cards-front card-border">
+          <div class="characterCard">
+            <section class="card-front card-border">
               <img src="${character.img}"/>
               <h3>${character.name}</h3>
             </section>
-            <section class="cards-back card-border">
+            <section class="card-back card-border">
               <h3>${character.name}</h3>
               <p>Gender: ${character.gender}</p>
               <p>Age: ${character.age}</p>
