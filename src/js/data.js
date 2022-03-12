@@ -1,7 +1,7 @@
 //MoviesPage
 
 export const filterMovies = (searchString, dataGhibli) => {
-  const search = searchString.toLowerCase();
+  const search = searchString.trim().toLowerCase();
   const data = dataGhibli.filter((movie) => {
     return (
       movie.title.toLowerCase().includes(search) ||
