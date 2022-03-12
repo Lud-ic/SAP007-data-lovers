@@ -4,6 +4,7 @@ import {
   filterCharacters,
   alphabeticalSort,
   filterByGender,
+  countItem,
 } from "../src/js/data.js";
 
 const arrayFilms = [
@@ -170,5 +171,16 @@ describe("filterByGender", () => {
   it("should return only famale characters", () => {
     const gender = filterByGender(arrayCharacters, "Female");
     expect(gender).toEqual([arrayCharacters[1], arrayCharacters[2]]);
+  });
+});
+
+describe("countItem", () => {
+  it("should return the amount of item when research in the search bar", () => {
+    const testCount = countItem([]);
+    expect(testCount).toBe(0);
+  });
+  it("should return the amount of item when research in the search bar", () => {
+    const testCount = countItem(arrayCharacters);
+    expect(testCount).toBe(3);
   });
 });
