@@ -2,6 +2,7 @@ import {
   filterMovies,
   sortMovies,
   filterCharacters,
+  getCharacters,
   alphabeticalSort,
   filterByGender,
   countItem,
@@ -147,6 +148,13 @@ describe("filterCharacters", () => {
     expect(filterPeople.length).toEqual(1);
   });
 });
+
+describe("getCharacters", () => {
+  it("should return a array of people", () => {
+    const characters = getCharacters(arrayFilms);
+    expect(characters).toEqual(
+      [arrayFilms[0].people, arrayFilms[1].people, arrayFilms[2].people].flat()
+    );
   });
 });
 
