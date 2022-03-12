@@ -1,7 +1,7 @@
 //MoviesPage
 
 export const filterMovies = (searchString, dataGhibli) => {
-  const search = searchString.toLowerCase();
+  const search = searchString.trim().toLowerCase();
   const data = dataGhibli.filter((movie) => {
     return (
       movie.title.toLowerCase().includes(search) ||
@@ -44,14 +44,34 @@ export const sortMovies = (data, order) => {
 
 //CharactersPage
 
-export const filterCharacters = (searchTitle, films) => {
-  const search = searchTitle.toLowerCase();
-  const filteredfilms = films.filter((film) => {
-    return film.title.toLowerCase().includes(search);
-  });
-  const characters = getCharacters(filteredfilms);
+export const filterCharacters = (searchString, films) => {
+  searchString = searchString.trim().toLowerCase();
+  let resultCharacters = [];
+  for (const film of films) {
+    if (film.title.toLowerCase().includes(searchString)) {
+      resultCharacters.push(...film.people);
+    } else {
+      const filterCharacters = film.people.filter((person) => {
+        return person.name.toLowerCase().includes(searchString);
+      });
+      resultCharacters.push(...filterCharacters);
+      // for (const person of film.people) {
+      //   if (person.name.toLowerCase().includes(searchString)) {
+      //     resultCharacters.push(person);
+      //   }
+      // }
+    }
 
-  return characters;
+    // const filteredfilms = films.filter((film) => {
+    //   return film.title.toLowerCase().includes(search);
+
+    // });
+
+    // const characters = getCharacters(filteredfilms);
+
+    // return characters;
+  }
+  return resultCharacters;
 };
 
 export function getCharacters(films) {
