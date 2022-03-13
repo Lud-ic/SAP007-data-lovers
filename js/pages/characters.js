@@ -5,6 +5,7 @@ import {
   getCharacters,
   alphabeticalSort,
   filterByGender,
+  countItem,
 } from "../data.js";
 
 menu();
@@ -16,16 +17,16 @@ const charactersAll = getCharacters(data.films);
 console.log(charactersAll, "charactersAll");
 
 function makeCharacterCards(people) {
-  document.getElementById("cardsCharacters").innerHTML = people
+  document.getElementById("characterCards").innerHTML = people
     .map(
       (character) =>
         `
-          <div class="cardsCharactersContainer">
-            <section class="cards-front card-border">
+          <div class="characterCard">
+            <section class="card-front card-border">
               <img src="${character.img}"/>
               <h3>${character.name}</h3>
             </section>
-            <section class="cards-back card-border">
+            <section class="card-back card-border">
               <h3>${character.name}</h3>
               <p>Gender: ${character.gender}</p>
               <p>Age: ${character.age}</p>
@@ -39,12 +40,24 @@ function makeCharacterCards(people) {
     .join("");
 }
 
+const result = document.getElementById("result");
+
+function resultCalc(selectedFilter) {
+  result.innerHTML = "";
+  result.classList.add("resultContainer");
+  const totalResults = countItem(selectedFilter);
+  result.innerHTML = `${totalResults} result${
+    totalResults === 1 ? "" : "s"
+  } found`;
+}
+
 const inputSearch = document.getElementById("inputSearch");
 
 inputSearch.addEventListener("keyup", (e) => {
   const searchTitle = e.target.value;
   const dataFiltered = filterCharacters(searchTitle, data.films);
   makeCharacterCards(dataFiltered);
+  resultCalc(dataFiltered);
 });
 
 const inputSelect = document.getElementById("alphabeticalSelect");
@@ -62,6 +75,7 @@ selectGender.addEventListener("change", (e) => {
   const filteredGender = filterByGender(charactersAll, selectedGender);
   console.log(filteredGender, "Gender");
   makeCharacterCards(filteredGender);
+  resultCalc(filteredGender);
 });
 
 console.log(charactersAll);
