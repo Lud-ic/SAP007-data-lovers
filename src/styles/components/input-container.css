@@ -7,7 +7,7 @@
   align-items: center;
   position: sticky;
   top: 15vh;
-  background-color: #ff3b3f;
+  background-color: #01abdc;
   padding: 3vh;
   border-top: 5px solid #ffffff;
   z-index: 2;
@@ -32,7 +32,18 @@
 @media (max-width: 767px) {
   .inputContainer {
     top: 8vh;
+    gap: 10px;
     z-index: 1;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  #inputSearch {
+    width: 100%;
+  }
+  .inputSelectContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
   }
 }
 
