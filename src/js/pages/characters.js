@@ -43,12 +43,13 @@ function makeCharacterCards(people) {
 const result = document.getElementById("result");
 
 function resultCalc(selectedFilter) {
-  result.innerHTML = "";
   result.classList.add("resultContainer");
   const totalResults = countItem(selectedFilter);
-  result.innerHTML = `${totalResults} result${
-    totalResults === 1 ? "" : "s"
-  } found`;
+  result.innerHTML = `
+    <div class=result>
+       ${totalResults} result${totalResults === 1 ? "" : "s"} found
+    </div>
+  `;
 }
 
 const inputSearch = document.getElementById("inputSearch");
