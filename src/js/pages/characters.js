@@ -26,11 +26,11 @@ function makeCharacterCards(people) {
             </section>
             <section class="card-back card-border">
               <h3>${character.name}</h3>
-              <p>Gender: ${character.gender}</p>
-              <p>Age: ${character.age}</p>
-              <p>Eye-color: ${character.eye_color}</p>
-              <p>Hair-color: ${character.hair_color}</p>
-              <p>Species: ${character.specie}</p>
+              <p><strong>Gender:</strong> ${character.gender}</p>
+              <p><strong>Age:</strong> ${character.age}</p>
+              <p><strong>Eye-color:</strong> ${character.eye_color}</p>
+              <p><strong>Hair-color:</strong> ${character.hair_color}</p>
+              <p><strong>Species:</strong> ${character.specie}</p>
             </section>
           </div>
         `
