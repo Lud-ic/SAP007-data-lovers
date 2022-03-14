@@ -1,16 +1,7 @@
 @import "../reset.css";
 @import "../components/header.css";
+@import "../components/cover.css";
 @import "../components/footer.css";
-
-.cover {
-  background-image: url(../../assets/img/studio_ghibli.jpg);
-  height: 70vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-}
 
 .aboutGhibli {
   width: 80vw;
@@ -31,6 +22,5 @@
 .textAboutGhibli::first-letter {
   font-size: 200%;
   font-weight: 500;
-  /* color: ; */
   float: inline-start;
 }
