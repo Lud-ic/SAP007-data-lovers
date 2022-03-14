@@ -1,8 +1,5 @@
-.coverContainer {
-}
 .cover {
   background-image: url(../../assets/img/studio_ghibli.jpg);
-  /* opacity: 40%; */
   height: 70vh;
   background-position: center;
   background-repeat: no-repeat;
