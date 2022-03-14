@@ -55,21 +55,7 @@ export const filterCharacters = (searchString, films) => {
         return person.name.toLowerCase().includes(searchString);
       });
       resultCharacters.push(...filterCharacters);
-      // for (const person of film.people) {
-      //   if (person.name.toLowerCase().includes(searchString)) {
-      //     resultCharacters.push(person);
-      //   }
-      // }
     }
-
-    // const filteredfilms = films.filter((film) => {
-    //   return film.title.toLowerCase().includes(search);
-
-    // });
-
-    // const characters = getCharacters(filteredfilms);
-
-    // return characters;
   }
   return resultCharacters;
 };

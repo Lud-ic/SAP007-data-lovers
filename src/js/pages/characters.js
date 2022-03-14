@@ -14,8 +14,6 @@ document.getElementById("form").reset();
 
 const charactersAll = getCharacters(data.films);
 
-console.log(charactersAll, "charactersAll");
-
 function makeCharacterCards(people) {
   document.getElementById("characterCards").innerHTML = people
     .map(
@@ -74,10 +72,8 @@ const selectGender = document.getElementById("selectGender");
 selectGender.addEventListener("change", (e) => {
   const selectedGender = e.target.value;
   const filteredGender = filterByGender(charactersAll, selectedGender);
-  console.log(filteredGender, "Gender");
   makeCharacterCards(filteredGender);
   resultCalc(filteredGender);
 });
 
-console.log(charactersAll);
 makeCharacterCards(charactersAll);

@@ -22,6 +22,5 @@
 .textAboutGhibli::first-letter {
   font-size: 200%;
   font-weight: 500;
-  /* color: ; */
   float: inline-start;
 }

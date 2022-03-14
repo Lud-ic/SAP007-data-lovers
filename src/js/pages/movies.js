@@ -61,7 +61,6 @@ const inputSearch = document.getElementById("inputSearch");
 
 inputSearch.addEventListener("keyup", (e) => {
   const searchString = e.target.value;
-  console.log(searchString);
   const filteredMovies = filterMovies(searchString, moviesList);
   makeMovieCards(filteredMovies);
   resultCalc(filteredMovies);
