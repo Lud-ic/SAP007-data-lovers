@@ -29,9 +29,13 @@
   outline: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1044px) {
   .inputContainer {
     top: 8vh;
+  }
+}
+@media (max-width: 767px) {
+  .inputContainer {
     gap: 10px;
     z-index: 1;
     flex-direction: column;
