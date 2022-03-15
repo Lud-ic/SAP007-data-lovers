@@ -16,10 +16,11 @@ export const filterMovies = (searchString, dataGhibli) => {
 export const sortMovies = (data, order) => {
   const copy = [...data];
   if (order == "A-Z") {
-    return copy.sort((a, z) => (a.title > z.title ? 1 : -1));
+    return copy.sort((a, z) => a.title.localeCompare(z.title));
   }
   if (order == "Z-A") {
-    return copy.sort((a, z) => (a.title > z.title ? -1 : 1));
+    return copy.sort((a, z) => z.title.localeCompare(a.title));
+  }
   }
   if (order == "Highest-Score") {
     return copy.sort((a, z) =>
@@ -73,9 +74,9 @@ export function getCharacters(films) {
 export const alphabeticalSort = (data, order) => {
   const copy = [...data];
   if (order == "A-Z") {
-    return copy.sort((a, z) => (a.name > z.name ? 1 : -1));
+    return copy.sort((a, z) => a.name.localeCompare(z.name));
   } else {
-    return copy.sort((a, z) => (a.name > z.name ? -1 : 1));
+    return copy.sort((a, z) => z.name.localeCompare(a.name));
   }
 };
 
