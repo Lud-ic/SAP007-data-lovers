@@ -16,29 +16,21 @@ export const filterMovies = (searchString, dataGhibli) => {
 export const sortMovies = (data, order) => {
   const copy = [...data];
   if (order == "A-Z") {
-    return copy.sort((a, z) => (a.title > z.title ? 1 : -1));
+    return copy.sort((a, z) => a.title.localeCompare(z.title));
   }
   if (order == "Z-A") {
-    return copy.sort((a, z) => (a.title > z.title ? -1 : 1));
-  }
-  if (order == "Highest-Score") {
-    return copy.sort((a, z) =>
-      Number(a.rt_score) > Number(z.rt_score) ? -1 : 1
-    );
+    return copy.sort((a, z) => z.title.localeCompare(a.title));
   }
   if (order == "Lowest-Score") {
-    return copy.sort((a, z) =>
-      Number(a.rt_score) > Number(z.rt_score) ? 1 : -1
-    );
+    return copy.sort((a, z) => Number(a.rt_score) - Number(z.rt_score));
+  }
+  if (order == "Highest-Score") {
+    return copy.sort((a, z) => Number(z.rt_score) - Number(a.rt_score));
   }
   if (order == "Oldest") {
-    return copy.sort((a, z) =>
-      Number(a.release_date) > Number(z.release_date) ? 1 : -1
-    );
+    return copy.sort((a, z) => Number(a.release_date) - Number(z.release_date));
   } else {
-    return copy.sort((a, z) =>
-      Number(a.release_date) > Number(z.release_date) ? -1 : 1
-    );
+    return copy.sort((a, z) => Number(z.release_date) - Number(a.release_date));
   }
 };
 
@@ -73,9 +65,9 @@ export function getCharacters(films) {
 export const alphabeticalSort = (data, order) => {
   const copy = [...data];
   if (order == "A-Z") {
-    return copy.sort((a, z) => (a.name > z.name ? 1 : -1));
+    return copy.sort((a, z) => a.name.localeCompare(z.name));
   } else {
-    return copy.sort((a, z) => (a.name > z.name ? -1 : 1));
+    return copy.sort((a, z) => z.name.localeCompare(a.name));
   }
 };
 

@@ -13,6 +13,7 @@ menu();
 document.getElementById("form").reset();
 
 const charactersAll = getCharacters(data.films);
+makeCharacterCards(charactersAll);
 
 function makeCharacterCards(people) {
   document.getElementById("characterCards").innerHTML = people
@@ -75,5 +76,3 @@ selectGender.addEventListener("change", (e) => {
   makeCharacterCards(filteredGender);
   resultCalc(filteredGender);
 });
-
-makeCharacterCards(charactersAll);
