@@ -75,7 +75,7 @@ a {
   font-weight: 500;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1044px) {
   .headerContainer {
     flex-direction: column;
     height: 8vh;

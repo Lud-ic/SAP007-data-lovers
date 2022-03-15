@@ -26,7 +26,7 @@ function makeMovieCards(movies) {
             </div>
 
             <div class="ratingContainer">
-              <img src="../../assets/icon/star.svg" alt="star" class="star"/>
+              <p><strong>Rating </strong></p>
               <p>${item.rt_score}</p>
             </div>
 

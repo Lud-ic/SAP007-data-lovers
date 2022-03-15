@@ -9,7 +9,6 @@
   top: 15vh;
   background-color: #01abdc;
   padding: 3vh;
-  /* border-top: 5px solid #ffffff; */
   z-index: 2;
 }
 
@@ -29,9 +28,23 @@
   outline: none;
 }
 
-@media (max-width: 767px) {
+.inputSelectContainer {
+  gap: 5vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.selectInput {
+  width: 20vw;
+}
+@media (max-width: 1044px) {
   .inputContainer {
     top: 8vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .inputContainer {
     gap: 10px;
     z-index: 1;
     flex-direction: column;
@@ -45,6 +58,10 @@
     flex-direction: row;
     gap: 1vw;
   }
+
+  .selectInput {
+    width: 30vw;
+  }
 }
 
 @media (max-width: 480px) {
@@ -57,5 +74,9 @@
 
   #inputSearch {
     width: 100%;
+  }
+
+  .selectInput {
+    width: 40vw;
   }
 }
