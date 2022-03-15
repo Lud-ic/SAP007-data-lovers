@@ -26,7 +26,7 @@ function makeMovieCards(movies) {
             </div>
 
             <div class="ratingContainer">
-              <img src="..\\..\\assets\\icon\\star.svg" alt="star" class="star"/>
+              <img src="../../assets/icon/studio-ghibli-logo-black.svg" alt="star" class="star"/>
               <p>${item.rt_score}</p>
             </div>
 
