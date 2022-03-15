@@ -21,25 +21,16 @@ export const sortMovies = (data, order) => {
   if (order == "Z-A") {
     return copy.sort((a, z) => z.title.localeCompare(a.title));
   }
+  if (order == "Lowest-Score") {
+    return copy.sort((a, z) => Number(a.rt_score) - Number(z.rt_score));
   }
   if (order == "Highest-Score") {
-    return copy.sort((a, z) =>
-      Number(a.rt_score) > Number(z.rt_score) ? -1 : 1
-    );
-  }
-  if (order == "Lowest-Score") {
-    return copy.sort((a, z) =>
-      Number(a.rt_score) > Number(z.rt_score) ? 1 : -1
-    );
+    return copy.sort((a, z) => Number(z.rt_score) - Number(a.rt_score));
   }
   if (order == "Oldest") {
-    return copy.sort((a, z) =>
-      Number(a.release_date) > Number(z.release_date) ? 1 : -1
-    );
+    return copy.sort((a, z) => Number(a.release_date) - Number(z.release_date));
   } else {
-    return copy.sort((a, z) =>
-      Number(a.release_date) > Number(z.release_date) ? -1 : 1
-    );
+    return copy.sort((a, z) => Number(z.release_date) - Number(a.release_date));
   }
 };
 
