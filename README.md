@@ -115,6 +115,7 @@ A prototipaçãodo projeto foi feita utizando a ferramenta de design [Figma](htt
 - HTML5
 - CSS3
 - JavaScript Vanilla
+- Jest
 - Node.js
 - Git e GitHub
 
